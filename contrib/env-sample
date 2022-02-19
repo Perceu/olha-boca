@@ -1,0 +1,3 @@
+DEBUG=True
+ALLOWED_HOSTS=*
+#DATABASE_URL=mysql://myuser:mypassword@myhost/mydatabase
