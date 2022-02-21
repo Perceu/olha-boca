@@ -1,0 +1,1 @@
+web: gunicorn olha_boca.wsgi --log-file -
