@@ -1,5 +1,5 @@
 from django.db import models
-from olha_boca.pessoas.models import Pessoa
+from olha_boca.infratores.models import Infratores
 # Create your models here.
 
 class InfracoesTipos(models.Model):
@@ -22,7 +22,7 @@ class Infracoes(models.Model):
         verbose_name = "Infração"
         verbose_name_plural = "Infrações"
 
-    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE, related_name="infracoes")
+    pessoa = models.ForeignKey(Infratores, on_delete=models.CASCADE, related_name="infracoes")
     tipo = models.ForeignKey(InfracoesTipos, on_delete=models.RESTRICT, related_name="infracoes")
     paga = models.BooleanField(default=False)
 

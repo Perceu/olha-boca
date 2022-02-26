@@ -1,9 +1,9 @@
 from django.contrib import admin
-from olha_boca.pessoas.models import Pessoa
+from olha_boca.infratores.models import Infratores
 
 # Register your models here.
 
-class PessoasAdmin(admin.ModelAdmin):
+class InfratoresAdmin(admin.ModelAdmin):
     list_display = ('nome', 'infracoes_a_pagar', 'total_infracoes', 'valor_a_pagar')
 
     @admin.display(empty_value='???')
@@ -22,4 +22,4 @@ class PessoasAdmin(admin.ModelAdmin):
             total += (inf.tipo.vibs * inf.tipo.multiplicador_vibs)
         return f'R$ {total:.2f}'
 
-admin.site.register(Pessoa, PessoasAdmin)
+admin.site.register(Infratores, InfratoresAdmin)
